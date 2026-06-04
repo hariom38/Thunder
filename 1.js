@@ -1,126 +1,61 @@
-// console.log("Hello world");
+//this is best 
+#include <iostream>
+#include <string>
+using namespace std;
 
-// Burder other language: Leave that
+int main() {
+    string str;
+    getline(cin, str);
 
-// let a = 10.6;
-// a = 30;
+    int start = -1, end = -1;
 
-// // string type
+    for (int i = 0; i < str.size(); i++) {
+        if (str[i] == '(') start = i;
+        if (str[i] == ')') {
+            end = i;
+            break;
+        }
+    }
 
-// let firstString = "Rohit Negi";
+    // String case: console.log("Hello")
+    if (str[start + 1] == '"') {
+        for (int i = start + 2; i <= end - 2; i++)
+            cout << str[i];
+        cout << endl;
+    }
+    else {
+        string expr = str.substr(start + 1, end - start - 1);
 
-// console.log(a);
+        int pos = -1;
+        char op;
 
-// const a = 10.9;
-// a = 7;
+        for (int i = 0; i < expr.size(); i++) {
+            if (expr[i] == '+' || expr[i] == '-' ||
+                expr[i] == '*' || expr[i] == '/') {
+                pos = i;
+                op = expr[i];
+                break;
+            }
+        }
 
-// console.log(a);
+        int a = stoi(expr.substr(0, pos));
+        int b = stoi(expr.substr(pos + 1));
 
-// let a = 30
-// let b = a;
+        if (op == '+')
+            cout << a + b << endl;
+        else if (op == '-')
+            cout << a - b << endl;
+        else if (op == '*')
+            cout << a * b << endl;
+        else {
+            if (b == 0)
+                cout << "Division by zero" << endl;
+            else
+                cout << a / b << endl;
+        }
+    }
 
-// b = 70;
-
-// console.log(a,b);
-
-// let a = 10;
-// a = 20;
-
-// console.log(a);
-
-// primitive data type and non primitive data type
-
-// primitive data: number, string, boolean, undefined, null, symbol, bigint
-// immutable
-
-
-// number
-// let firstNumber = 20;
-// let secondNumber = 20.7;
-
-// console.log(firstNumber,secondNumber);
-
-// // string
-
-// let firstString = "Rohit Negi";
-// let secondString = 'Mohan Bhaiya';
-// let thirdString = `Rohit ${secondNumber} is a Good Boy ${firstNumber} `;
-
-// console.log(firstString,secondString,thirdString);
-
-// Boolean
-
-// let firstBoolean = true;
-// let secondBoolean = false;
-
-// console.log(firstBoolean,secondBoolean);
-
-
-// undefined
-
-// let a;
-// console.log(a);
+    return 0;
+}//this is valid for-----------> "console.log(121+13)""
 
 
-// Null
-
-// let b = null;
-// console.log(b);
-
-
-// bigint
-
-// let a = 27343285947319574913n;
-// console.log(a);
-
-// symbolId
-
-// let a = Symbol("Rohit");
-// let b = Symbol("Rohit");
-// console.log(b==a);
-
-// non primitive: object, array, function
-
-
-// let arr = [10,20,30,"Rohit",9.3, true, 90];
-// console.log(arr);
-
-
-// object: Sabse jaada important hai
-// let person = {
-//     name:"Rohit",
-//     age: 30,
-//     city: "dwarka"
-// }
-
-// console.log(person);
-
-// let a = function greet(){
-//     console.log("Hello akshat");
-// }
-
-
-// let a = function(){
-//    console.log("hi");
-//    return 10;
-// }
-
-// // console.log(a);
-// console.log(a);
-
-
-// Homework
-
-// let a = "Rohit";
-
-// console.log(typeof(a));
-
-// Primitive data type
-// Non primitive data
-
-let a = {
-    name:"Rohit",
-    age:20
-}
-
-console.log(typeof(a));
