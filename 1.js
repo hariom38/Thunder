@@ -8,7 +8,7 @@ int main() {
     getline(cin, str);
 
     int start = -1, end = -1;
-
+ 
     for (int i = 0; i < str.size(); i++) {
         if (str[i] == '(') start = i;
         if (str[i] == ')') {
